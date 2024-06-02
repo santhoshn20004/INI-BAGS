@@ -77,7 +77,7 @@
         <div class="popup-content">
             <i class="fas fa-check-circle"></i>
             <p>Your order has been confirmed and we will update your details Soon.</p>
-            <button id="index.html" class="btn">Close</button>
+            <button id="closePopup" class="btn">Close</button>
         </div>
     </div>
 
@@ -125,6 +125,9 @@
         document.getElementById('closePopup').addEventListener('click', function() {
             document.getElementById('popupMessage').style.display = 'none'; // Hide popup
             document.getElementById('orderForm').submit(); // Submit the form
+            setTimeout(function() {
+                window.location.href = 'index.html';
+            }, 500);
         });
     </script>
 </body>
