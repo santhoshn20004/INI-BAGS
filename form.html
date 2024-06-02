@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ini-Eco-Bags</title>
+
+    <!-- SWIPER -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- Font Awesome CDN Link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Custom CSS File Link  -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- BOOK -->
+    <section class="book" id="book">
+        <h1 class="heading">DETAILS<span>for Online order</span></h1>
+
+        <form id="orderForm" action="index.html" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Name" class="box">
+            <input type="email" name="email" placeholder="Email" class="box">
+            <input type="text" name="phone" placeholder="Phone Number" class="box">
+            <input type="number" id="Number of pieces" name="Number of pieces" required placeholder="Number of pieces" class="box">
+                
+            <div class="box">
+                <h2 class="name">Type Of Bag</h2>
+                <label class="checkbox">
+                    <input class="checkbox-one" type="checkbox" name="bagType" value="Type1">
+                    <span class="checkmark"></span>
+                    Type 1
+                </label>
+                <label class="checkbox">
+                    <input class="checkbox-two" type="checkbox" name="bagType" value="Type2">
+                    <span class="checkmark"></span>
+                    Type 2
+                </label>
+                <label class="checkbox">
+                    <input class="checkbox-three" type="checkbox" name="bagType" value="Type3">
+                    <span class="checkmark"></span>
+                    Type 3
+                </label>
+            </div>
+                
+            <div class="box">
+                <h2 class="name">PRINTING</h2>
+                <label class="checkbox">
+                    <input class="checkbox-one" type="checkbox" name="printing" value="Single Side">
+                    <span class="checkmark"></span>
+                    Single Side
+                </label>
+                <label class="checkbox">
+                    <input class="checkbox-two" type="checkbox" name="printing" value="Double Side">
+                    <span class="checkmark"></span>
+                    Double Side
+                </label>
+                <label class="checkbox">
+                    <input class="checkbox-three" type="checkbox" name="printing" value="No Need">
+                    <span class="checkmark"></span>
+                    No Need
+                </label>
+            </div>
+            <div  class="box">
+                <h2 class="name">Upload Your Photo to print</h2>
+                <input class="upload" type="file" name="fileToUpload" accept=".doc,.docx,.pdf,.jpg,.png,.jfif,.jpeg,.gif"><br><br><br>
+            </div>
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+    </section>
+
+    <!-- Popup message -->
+    <div id="popupMessage" class="popup" style="display: none;">
+        <div class="popup-content">
+            <i class="fas fa-check-circle"></i>
+            <p>Your order has been confirmed and we will update your details Soon.</p>
+            <button id="closePopup" class="btn">Close</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>our branch</h3>
+                <a href="https://www.google.com/maps/place/Tamil+Nadu/@10.8153306,75.6463389,7z/data=!3m1!4b1!4m6!3m5!1s0x3b00c582b1189633:0x559475cc463361f0!8m2!3d11.1271225!4d78.6568942!16zL20vMDdjOTg?entry=ttu"><i class="fas fa-map-marker-alt"></i> Tamilnadu</a>
+            </div>
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="index.html"><i class="fas fa-arrow-right"></i> home</a>
+            </div>
+            <div class="box">
+                <h3>contact info</h3>
+                <a href="tel:+916282817625"><i class="fas fa-phone"></i> +916282817625</a>
+                <a href="tel:+918526938095"><i class="fas fa-phone"></i> +918526938095</a>
+                <a href="mailto:iniecobag2024@gmail.com"><i class="fas fa-envelope"></i> iniecobag2024@gmail.com</a>
+                <a href="https://www.google.com/maps/place/Samathur,+Tamil+Nadu/@10.5849104,77.0138169,21z/data=!4m6!3m5!1s0x3ba830a6ee15f1e5:0xfb49bf9bba85e73b!8m2!3d10.6032248!4d77.0154151!16zL20vMGY2NWo5?entry=ttu"><i class="fas fa-map-marker-alt"></i> Pilchinnampalayam, Pollachi</a>
+            </div>
+            <div class="box">
+                <h3>contact info</h3>
+                <a href="https://www.instagram.com/ini_ecobags?igsh=MzRlODBiNWFlZA=="><i class="fab fa-facebook-f"></i> facebook</a>
+                <a href="https://www.instagram.com/ini_ecobags?igsh=MzRlODBiNWFlZA=="><i class="fab fa-instagram"></i> instagram</a>
+                <a href="https://www.instagram.com/ini_ecobags?igsh=MzRlODBiNWFlZA=="><i class="fab fa-linkedin"></i> linkedin</a>
+            </div>
+        </div>
+        <div class="credit">created by <span><a href="https://www.linkedin.com/in/santhosh-n-564a24259/">Seven-Smile Inovation</a></span> | all rights reserved</div>
+    </section>
+
+    <!-- SWIPER -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <!-- Custom JS File Link  -->
+    <script src="js/script.js"></script>
+
+    <!-- Custom JavaScript for Popup -->
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting immediately
+            document.getElementById('popupMessage').style.display = 'block'; // Show popup
+        });
+
+        document.getElementById('closePopup').addEventListener('click', function() {
+            document.getElementById('popupMessage').style.display = 'none'; // Hide popup
+            document.getElementById('orderForm').submit(); // Submit the form
+        });
+    </script>
+</body>
+</html>
